@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Set User</h1>
+    <% if (users.length > 0) { %>
+        <div>
+            <label>User</label>
+            <select name="userId">
+                <% users.forEach(user => { %>
+                    <option value="<%= user.id %>"><%= user.login %></option>
+                <% }); %>
+            </select>
+            <button>Set user</button>
+        </div>
+    <% } else { %>
+        <p>Sorry, no users has been found.</p>
+    <% } %>
+    <%- include('partials/back') %>
+</body>
+</html>
